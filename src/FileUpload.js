@@ -6,6 +6,7 @@ class FileUpload {
   }
 
   upload(file, additionalData = {}) {
+    console.log("in upload- multipart")
     let xhr = new XMLHttpRequest()
     xhr.responseType = 'json'
 
@@ -21,14 +22,19 @@ class FileUpload {
       xhr.onerror = e => reject(e)
     })
 
+//    var reader = new FileReader()
+//    reader.onloadend = ((evt) => {
+//      xhr.send(evt.target.result)
+//    })
+//    reader.readAsBinaryString(file)
     // Start upload
     let formData = new FormData()
     formData.append('file', file)
     Object.keys(additionalData).forEach(p => {
       formData.append(p, additionalData[p])
     })
-    xhr.send(formData)
-
+    xhr.send(file)
+//
     return promise
   }
 

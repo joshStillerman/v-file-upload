@@ -60,7 +60,9 @@ export default {
       let files = e.target.files || e.dataTransfer.files
       if (!files.length) return
       const file = files[0]
-      if (file.size > this.maxSize) {
+      console.log(file)
+      this.$emit('update:filename', file.name)
+      if (file.size > this.maxsize) {
         this.$emit('error', {
           code: 'max_size_exceded',
           message: `File max size exceded, upload a file smaller than ${this

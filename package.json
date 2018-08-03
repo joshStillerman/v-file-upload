@@ -31,5 +31,15 @@
   "bugs": {
     "url": "https://github.com/dflourusso/v-file-upload/issues"
   },
-  "homepage": "https://github.com/dflourusso/v-file-upload#readme"
+  "homepage": "https://github.com/dflourusso/v-file-upload#readme",
+  "dependencies": {
+    "css-loader": "^1.0.0",
+    "poi": "^10.2.9",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "pug-plain-loader": "^1.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
+  }
 }
